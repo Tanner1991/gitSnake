@@ -123,7 +123,7 @@ void Game::UpdateModel()
 
 				do {
 					goal0.Spawn(brd, snake);
-				} while (isCollideObs());
+				} while (isCollideObs3(goal0));
 				goalHit = false;
 			}
 
@@ -188,11 +188,13 @@ bool Game::isCollideObs()
 	return temp;
 }
 
+
 bool Game::isCollideObs2(const Snake& snake)
 {
 	bool temp = false;
-	Location temp2 = snake.GetHeadLocation(); 
-	
+	Location temp2 = snake.GetHeadLocation();
+
+
 
 	for (int i = 0; i < obsSegments; i++) {
 
@@ -204,7 +206,30 @@ bool Game::isCollideObs2(const Snake& snake)
 
 	}
 	return temp;
+
 }
+
+bool Game::isCollideObs3( Goal& goal)
+{
+	bool temp = false;
+	Location temp2 =  goal.GetLocation();
+
+
+
+	for (int i = 0; i < obsSegments; i++) {
+
+
+		if ((obs[i].x == temp2.x) && (obs[i].y == temp2.y)) {
+			return true;
+		}
+
+
+	}
+	return temp;
+
+}
+
+	
 		
 	
 

@@ -46,6 +46,7 @@ private:
 	void DrawRectangle(int length, int width, int x, int y, int red, int green, int blue); 
 	bool isCollideObs();
 	bool isCollideObs2(const Snake& snake); 
+	bool isCollideObs3(Goal& goal); 
 	/********************************/
 private:
 	MainWindow& wnd;
